@@ -1,0 +1,8 @@
+{namespace rhp=TmFrstn\FscSliderSlick\ViewHelpers}
+<f:if condition="{data.related_content}">
+	<div class="fsc-slider-slick-content slick-slider clearfix" style="width: {slider.width}px; margin: auto" data-slick='{slider.options -> f:format.raw()}'>
+		<f:for each="{data.related_content}" as="tt_content">
+			<div class="fsc-slider-slick-item"><rhp:Content uid="{tt_content}" /></div>
+		</f:for>
+	</div>
+</f:if>

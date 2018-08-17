@@ -1,0 +1,22 @@
+{namespace rhp=TmFrstn\FscSliderSlick\ViewHelpers}
+<f:for each="{files}" as="file">
+	<figure class="fsc-slider-slick-item">
+		<rhp:image image="{file}" height="{data.imageheight}" width="{data.imagewidth}" alt="{file.properties.alt}" title="{file.properties.title}"/>
+		<f:if condition="{file.properties.description}">
+			<div class="fsc-slider-slick-trend-description">{file.properties.description}</div>
+		</f:if>
+	</figure>
+</f:for>
+
+<f:for each="{collection}" as="file">
+	<f:if condition="{file.properties.extension} != 'xml'">
+		<f:then>
+			<figure class="fsc-slider-slick-item">
+				<rhp:image image="{file}" height="{data.imageheight}" width="{data.imagewidth}" alt="{file.metaDataProperties.alt}" title="{file.metaDataProperties.title}"/>
+				<f:if condition="{file.properties.description}">
+					<div class="fsc-slider-slick-trend-description">{file.properties.description}</div>
+				</f:if>
+			</figure>
+		</f:then>
+	</f:if>
+</f:for>

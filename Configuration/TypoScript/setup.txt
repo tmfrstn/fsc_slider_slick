@@ -1,0 +1,42 @@
+tt_content {
+	fsc_slider_slick < lib.fluidContent
+	fsc_slider_slick {
+		layoutRootPaths {
+			150 = EXT:fsc_slider_slick/Resources/Private/Layouts
+		}
+		templateRootPaths {
+			150 = EXT:fsc_slider_slick/Resources/Private/Templates
+		}
+		partialRootPaths {
+			150 = EXT:fsc_slider_slick/Resources/Private/Partials
+		}
+		templateName = FscSliderSlick
+		dataProcessing {
+			10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+			10 {
+				references.fieldName = assets
+			}
+			20 = TmFrstn\FscSliderSlick\DataProcessing\FscSliderSlickProcessor
+		}
+	}
+}
+page{
+	includeCSS {
+		slickCss = EXT:fsc_slider_slick/Resources/Public/Css/slick.css
+		slickCss.disableCompression = 1
+		slickCss.excludeFromConcatenation = 1
+		#slickThemeCss = EXT:fsc_slider_slick/Resources/Public/Css/slick-theme.css
+		#slickThemeCss.disableCompression = 1
+		#slickThemeCss.excludeFromConcatenation = 1
+		slickThemeRhpCss = EXT:fsc_slider_slick/Resources/Public/Css/slick-theme-rhp.css
+		slickThemeRhpCss.disableCompression = 1
+		slickThemeRhpCss.excludeFromConcatenation = 1
+	}
+	includeJSFooter {
+		slickJs = EXT:fsc_slider_slick/Resources/Public/Javascript/Slickslider.js
+		slickJs.type = application/x-javascript
+		slickJs.disableCompression = 1
+		slickJs.excludeFromConcatenation = 1
+	}
+}
+

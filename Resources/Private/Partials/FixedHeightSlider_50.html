@@ -1,0 +1,57 @@
+{namespace rhp=TmFrstn\FscSliderSlick\ViewHelpers}
+<div class="fsc-slider-slick-height slick-slider clearfix" style="width: {slider.width}px; margin: auto" data-slick='{slider.options -> f:format.raw()}'>
+	<f:for each="{files}" as="file">
+		<figure class="fsc-slider-slick-item">
+			<f:if condition="{file.link}">
+				<f:then>
+					<f:link.typolink parameter="{file.link}">
+						<rhp:image image="{file}" height="{data.imageheight}" width="{data.imagewidth}" alt="{file.properties.alt}" title="{file.properties.title}" data="{lightbox: 'fixed-{data.uid}'}" />
+					</f:link.typolink>
+				</f:then>
+				<f:else>
+					<f:if condition="{file.properties.description}">
+						<f:then>
+							<f:link.typolink class="fancybox"
+											 parameter="{f:uri.image(
+															width: '2000',
+															image: '{file}')}"
+											 additionalAttributes="{data-fancybox-group:'gallery-{data.uid}', data-lightbox:'fixed-{data.uid}',data-title:'{file.properties.description}',caption:'{file.properties.description}'}">
+								<rhp:image image="{file}" height="{data.imageheight}" width="{data.imagewidth}" alt="{file.properties.alt}" title="{file.properties.title}" />
+							</f:link.typolink>
+						</f:then>
+						<f:else>
+							<f:link.typolink class="fancybox"
+											 parameter="{f:uri.image(
+															width: '2000',
+															image: '{file}')}"
+											 additionalAttributes="{data-fancybox-group:'gallery-{data.uid}', data-lightbox:'fixed-{data.uid}',caption:'{file.properties.title}'}">
+								<rhp:image image="{file}" height="{data.imageheight}" width="{data.imagewidth}" alt="{file.properties.alt}" title="{file.properties.title}" />
+							</f:link.typolink>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+			<div class="fsc-slider-slick-caption">
+				<f:if condition="{file.properties.title}">
+					<div class="fsc-slider-slick-caption-title">{file.properties.title}</div>
+				</f:if>
+				<f:if condition="{file.properties.description}">
+					<div class="fsc-slider-slick-trend-description">{file.properties.description}</div>
+				</f:if>
+			</div>
+		</figure>
+	</f:for>
+
+	<f:for each="{collection}" as="file">
+		<f:if condition="{file.properties.extension} != 'xml'">
+			<f:then>
+				<figure class="fsc-slider-slick-item">
+						<rhp:image image="{file}" height="{data.imageheight}" width="{data.imagewidth}" alt="{file.metaDataProperties.alt}" title="{file.metaDataProperties.title}" data="{lightbox: 'fixed-{data.uid}'}" />
+					<f:if condition="{file.properties.description}">
+						<div class="fsc-slider-slick-trend-description">{file.properties.description}</div>
+					</f:if>
+				</figure>
+			</f:then>
+		</f:if>
+	</f:for>
+</div>

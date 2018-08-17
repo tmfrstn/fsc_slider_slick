@@ -1,0 +1,1222 @@
+
+/* from  tophair.de */
+/* Slider */
+//colors
+$black_40: rgba(0, 0, 0, 0.4);
+$white: #fff;
+$black_30: rgba(0 ,0 , 0, 0.3);
+$white_30: rgba(255, 255, 255, 0.3);
+$black_80: rgba(0, 0, 0, .8);
+$color_donkey_brown_approx: #a3907d;
+$color_bon_jour_80_approx: rgba(228, 223, 220, .8);
+$black: #000;
+
+//fonts
+$font_0: source_sans_proregular;
+$font_1: Arial;
+$font_2: Helvetica;
+$font_3: sans-serif;
+$font_4: Lato;
+$font_5: sans-serif !important;
+
+//@extend-elements
+//original selectors
+//body .fsc-slider-slick, body .fsc-slider-slick .slick-list, body .fsc-slider-slick-fix, body .fsc-slider-slick-fix .slick-list
+%extend_1 {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+//original selectors
+//body .fsc-slider-slick-trend-description, body figcaption
+%extend_2 {
+    height: auto;
+    width: 100%;
+    bottom: 0;
+    color: $white;
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+}
+
+//original selectors
+//body .fsc-slider-slick-trend-description .mfp-bottom-bar, body figcaption .mfp-bottom-bar
+%extend_3 {
+    margin: 0;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+//original selectors
+//body .fsc-slider-slick-trend-description .mfp-bottom-bar .mfp-title, body figcaption .mfp-bottom-bar .mfp-title
+%extend_4 {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+//original selectors
+//section.dreisp-text .slick-slider iframe, section.zweisp .slick-slider iframe
+%extend_5 {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 250px;
+    border: none;
+}
+
+//original selectors
+//body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-above .ce-gallery .fsc-slider-slick-ce, body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-above .ce-gallery .fsc-slider-slick-news
+%extend_6 {
+    margin: 0 !important;
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+//original selectors
+//body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-above .ce-gallery .fsc-slider-slick-ce .slick-list .slick-track .ce-row.slick-slide .ce-column figure, body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-above .ce-gallery .fsc-slider-slick-news .slick-list .slick-track .ce-row.slick-slide .ce-column figure
+%extend_7 {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+//original selectors
+//body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-below .ce-gallery .fsc-slider-slick-ce, body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-below .ce-gallery .fsc-slider-slick-news
+%extend_8 {
+    margin: 0 !important;
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+//original selectors
+//body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-below .ce-gallery .fsc-slider-slick-ce .slick-list .slick-track .ce-row.slick-slide .ce-column figure, body div.fullWrap div.pageWrap div.contentWrap div.content div.article div.ce-textpic.ce-center.ce-below .ce-gallery .fsc-slider-slick-news .slick-list .slick-track .ce-row.slick-slide .ce-column figure
+%extend_9 {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+//original selectors
+//.slick-next, .slick-prev
+%extend_10 {
+    position: absolute;
+    display: block;
+    width: 40px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    background: $black_80;
+    color: transparent;
+    top: 50%;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: translate(0, -50%);
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 30px;
+    padding: 0;
+    border: none;
+    outline: 0.75;
+    height: 40px;
+    margin: -20px 0 0;
+    opacity: 0;
+    overflow: hidden;
+    text-decoration: none;
+    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: 1px 1px 0 $white_30;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: all 0.1s ease 0s;
+    z-index: 999;
+}
+
+//original selectors
+//.slick-next:focus, .slick-next:hover, .slick-prev:focus, .slick-prev:hover
+%extend_11 {
+    outline: 0;
+    background: $black_80;
+    color: transparent;
+}
+
+//original selectors
+//.slick-next:before, .slick-prev:before
+%extend_12 {
+    color: $white;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.5;
+    opacity: 0.75;
+}
+
+//original selectors
+//.zweisp33-66 .fsc-slider-slick-height figure.fsc-slider-slick-item img, .zweisp66-33 .fsc-slider-slick-height figure.fsc-slider-slick-item img
+%extend_13 {
+    width: auto;
+    height: auto;
+    max-height: 420px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+
+@charset "UTF-8";
+.fsc-slider-slick-height {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 600px;
+    background: transparent;
+    &.slick-slider.clearfix.slick-initialized {
+	margin-bottom: 20px !important;
+    }
+    figure.fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    width: auto;
+	    height: auto;
+	    max-height: 640px;
+	    margin: 0 auto;
+	}
+    }
+}
+.mfp-arrow {
+}
+.slick-slider {
+    display: block;
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    //Instead of the line below you could use @include user-select($select)
+    user-select: none;
+    touch-action: pan-y;
+    position: relative;
+    float: left;
+    width: 100% !important;
+    margin-bottom: 10px;
+    .slick-list {
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translate3d(0, 0, 0);
+    }
+    .slick-track {
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translate3d(0, 0, 0);
+    }
+    &:hover {
+	.slick-next {
+	    opacity: 0.75;
+	}
+	.slick-prev {
+	    opacity: 0.75;
+	}
+    }
+    figcaption.slideInfo {
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	padding: 1rem 2rem;
+	background: $black_30;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	width: 100%;
+	color: $white;
+	font-family: $font_0, $font_1, $font_2, $font_3;
+    }
+}
+.slick-dots {
+    text-align: center;
+    position: absolute;
+    bottom: -45px;
+    list-style: none;
+    display: block;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    li {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin: 0 5px;
+	padding: 0;
+	cursor: pointer;
+	button {
+	    border: 0;
+	    background: $color_donkey_brown_approx;
+	    display: block;
+	    height: 10px;
+	    width: 10px;
+	    outline: 0;
+	    line-height: 0;
+	    font-size: 0;
+	    color: transparent;
+	    padding: 5px;
+	    cursor: pointer;
+	    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	    border-radius: 10px;
+	    &:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "•";
+		width: 20px;
+		height: 20px;
+		font-size: 6px;
+		line-height: 20px;
+		text-align: center;
+		color: $color_donkey_brown_approx;
+		opacity: .25;
+	    }
+	    &:focus {
+		outline: 0;
+		&:before {
+		    opacity: 1;
+		}
+	    }
+	    &:hover {
+		outline: 0;
+		&:before {
+		    opacity: 1;
+		}
+	    }
+	}
+	&.slick-active button:before {
+	    color: $color_donkey_brown_approx;
+	    opacity: .75;
+	}
+    }
+}
+.slick-next {
+    @extend %extend_10;
+    right: 25px;
+    &:before {
+	@extend %extend_12;
+	content: " >";
+    }
+    &:focus {
+	@extend %extend_11;
+	&:before {
+	    opacity: 1;
+	}
+    }
+    &:hover {
+	@extend %extend_11;
+	&:before {
+	    opacity: 1;
+	}
+    }
+    &.slick-disabled:before {
+	opacity: .25;
+    }
+}
+.slick-prev {
+    @extend %extend_10;
+    left: 25px;
+    &:before {
+	@extend %extend_12;
+	content: "<";
+    }
+    &:focus {
+	@extend %extend_11;
+	&:before {
+	    opacity: 1;
+	}
+    }
+    &:hover {
+	@extend %extend_11;
+	&:before {
+	    opacity: 1;
+	}
+    }
+    &.slick-disabled:before {
+	opacity: .25;
+    }
+}
+.lb-next {
+    cursor: pointer;
+}
+.lb-prev {
+    cursor: pointer;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    &.dragging {
+	cursor: pointer;
+	cursor: hand;
+    }
+    &:focus {
+	outline: 0;
+    }
+}
+
+    .csc-textpic-text {
+	margin: 0 !important;
+    }
+    .fsc-slider-slick {
+	@extend %extend_1;
+	.slick-list {
+	    @extend %extend_1;
+	    height: auto;
+	    .slick-track {
+		margin: 0 !important;
+	    }
+	}
+    }
+    .fsc-slider-slick-fix {
+	@extend %extend_1;
+	.slick-list {
+	    @extend %extend_1;
+	    height: auto !important;
+	    max-height: 380px;
+	    .slick-slide {
+		height: auto;
+		img {
+		    max-height: 382px;
+		    max-width: 100%;
+		    width: auto;
+		}
+	    }
+	}
+    }
+    .fsc-slider-slick-content {
+	ins {
+	    padding-top: 10px;
+	}
+	p.advertisment {
+	    display: none;
+	}
+    }
+    .fsc-slider-slick-logo {
+	.slick-prev {
+	    left: 15px;
+	    top: 50%;
+	}
+	.slick-next {
+	    right: 15px;
+	    top: 50%;
+	}
+    }
+    .fsc-slider-slick-trend-description {
+	@extend %extend_2;
+	.mfp-bottom-bar {
+	    @extend %extend_3;
+	    .mfp-title {
+		@extend %extend_4;
+	    }
+	}
+    }
+    figcaption {
+	@extend %extend_2;
+	.mfp-bottom-bar {
+	    @extend %extend_3;
+	    .mfp-title {
+		@extend %extend_4;
+	    }
+	}
+    }
+    .fsc-slider-slick-caption-title {
+	font-weight: bold;
+	font-size: 14px;
+	color: $white;
+	text-align: left;
+	padding: 5px;
+    }
+    div.fullWrap div.pageWrap div.contentWrap {
+	header .thiCombi .thiMeta ul li.last:hover {
+	    cursor: pointer;
+	}
+	div.content div {
+	    &.news {
+		&.imageTrackContainer .news-list-view .fsc-slider-slick-news .slick-slide {
+		    height: auto !important;
+		}
+		div.news-list-view .article .news-img-wrap {
+		    .slick-next::before {
+			font-size: 15px;
+			line-height: 5px;
+		    }
+		    .slick-prev::before {
+			font-size: 15px;
+			line-height: 5px;
+		    }
+		    .slick-prev {
+			left: 5px;
+			height: 15px;
+			width: 15px;
+		    }
+		    .slick-next {
+			right: 5px;
+			height: 15px;
+			width: 15px;
+		    }
+		    .slick-dots {
+			display: none !important;
+		    }
+		    a.slick-slide {
+			padding-left: 0;
+			padding-right: 0;
+		    }
+		}
+		&.news-single .article {
+		    div.singleImageTrack .imageTrackMain .imageTrackSlick.news-img-wrap {
+			position: relative;
+			float: none;
+			width: 100% !important;
+			max-width: 800px;
+			margin: 0 auto;
+			clear: both;
+			.outer {
+			    width: 100%;
+			}
+		    }
+		    .news-img-wrap.fsc-slider-slick {
+			padding-right: 0;
+		    }
+		    .fsc-slider-slick-height-track.news-img-wrap .outer .mediaelement a {
+			position: relative;
+			float: left;
+			width: 100%;
+			text-align: center;
+			img {
+			    position: relative;
+			    float: none;
+			    width: auto;
+			    max-height: 600px;
+			}
+		    }
+		}
+	    }
+	    &.article div.ce-textpic {
+		&.ce-right {
+		    &.ce-above .ce-gallery .fsc-slider-slick.ce-row.slick-slider {
+			width: 80%;
+			float: right;
+		    }
+		    &.ce-below .ce-gallery .fsc-slider-slick.ce-row.slick-slider {
+			width: 80%;
+			float: right;
+		    }
+		}
+		&.ce-center {
+		    &.ce-above .ce-gallery {
+			.fsc-slider-slick-ce {
+			    @extend %extend_6;
+			    .slick-list {
+				margin: 0 !important;
+				.slick-track {
+				    margin: 0 !important;
+				    .ce-row.slick-slide {
+					margin: 0 !important;
+					.ce-column {
+					    margin: 0 !important;
+					    .ce-media {
+						margin: 0 !important;
+						img {
+						    width: 100%;
+						    height: auto;
+						}
+					    }
+					    figure {
+						@extend %extend_7;
+						figcaption {
+						    width: 100%;
+						}
+					    }
+					}
+				    }
+				}
+			    }
+			}
+			.fsc-slider-slick-news {
+			    @extend %extend_6;
+			    .slick-list {
+				margin: 0 !important;
+				.slick-track {
+				    margin: 0 !important;
+				    .ce-row.slick-slide {
+					margin: 0 !important;
+					.ce-column {
+					    margin: 0 !important;
+					    .ce-media {
+						margin: 0 !important;
+						img {
+						    width: 100%;
+						    height: auto;
+						}
+					    }
+					    figure {
+						@extend %extend_7;
+						figcaption {
+						    width: 100%;
+						}
+					    }
+					}
+				    }
+				}
+			    }
+			}
+			.fsc-slider-slick.ce-row.slick-slider {
+			    width: 80%;
+			    float: none;
+			    margin: 0 auto;
+			}
+		    }
+		    &.ce-below .ce-gallery {
+			.fsc-slider-slick-ce {
+			    @extend %extend_8;
+			    .slick-list {
+				margin: 0 !important;
+				.slick-track {
+				    margin: 0 !important;
+				    .ce-row.slick-slide {
+					margin: 0 !important;
+					.ce-column {
+					    margin: 0 !important;
+					    .ce-media {
+						margin: 0 !important;
+						img {
+						    width: 100%;
+						    height: auto;
+						}
+					    }
+					    figure {
+						@extend %extend_9;
+						figcaption {
+						    width: 100%;
+						}
+					    }
+					}
+				    }
+				}
+			    }
+			}
+			.fsc-slider-slick-news {
+			    @extend %extend_8;
+			    .slick-list {
+				margin: 0 !important;
+				.slick-track {
+				    margin: 0 !important;
+				    .ce-row.slick-slide {
+					margin: 0 !important;
+					.ce-column {
+					    margin: 0 !important;
+					    .ce-media {
+						margin: 0 !important;
+						img {
+						    width: 100%;
+						    height: auto;
+						}
+					    }
+					    figure {
+						@extend %extend_9;
+						figcaption {
+						    width: 100%;
+						}
+					    }
+					}
+				    }
+				}
+			    }
+			}
+			.fsc-slider-slick.ce-row.slick-slider {
+			    width: 80%;
+			    float: none;
+			    margin: 0 auto;
+			}
+		    }
+		}
+	    }
+	}
+    }
+.fsc-slider-slick-caption {
+    bottom: 0;
+    position: absolute;
+    background: $black_40 none repeat scroll 0 0;
+    width: 100%;
+}
+section {
+    &.dreisp-text .slick-slider iframe {
+	@extend %extend_5;
+    }
+    &.zweisp .slick-slider iframe {
+	@extend %extend_5;
+    }
+}
+.fsc-slider-slick-trend {
+    position: relative;
+    float: left;
+    width: 100%;
+    figure.fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    width: auto;
+	    height: auto;
+	    max-height: 640px;
+	    margin: 0 auto;
+	}
+	.fsc-slider-slick-trend-description {
+	    position: absolute;
+	    left: 0;
+	    width: 100%;
+	    bottom: 25px;
+	    padding: 10px;
+	    background: $color_donkey_brown_approx;
+	    color: $white;
+	    font-size: 1.3rem;
+	    text-align: left;
+	}
+    }
+}
+.slick-track {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    &:after {
+	content: "";
+	display: table;
+	clear: both;
+    }
+    &:before {
+	content: "";
+	display: table;
+    }
+}
+.slick-loading {
+    .slick-track {
+	visibility: hidden;
+    }
+    .slick-slide {
+	visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    display: none;
+    img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+    }
+    &.slick-loading img {
+	display: none;
+    }
+}
+[dir=rtl] {
+    .slick-slide {
+	float: right;
+    }
+    .slick-prev {
+	left: auto;
+	right: 25px;
+	&:before {
+	    content: " >";
+	}
+    }
+    .slick-next {
+	left: 25px;
+	right: auto;
+	&:before {
+	    content: "<";
+	}
+    }
+    .article {
+	.slick-prev {
+	    left: auto;
+	    right: 25px;
+	    &:before {
+		content: " >";
+	    }
+	}
+	.slick-next {
+	    left: 25px;
+	    right: auto;
+	    &:before {
+		content: "<";
+	    }
+	}
+    }
+    .news {
+	.slick-prev {
+	    left: auto;
+	    right: 25px;
+	    &:before {
+		content: " >";
+	    }
+	}
+	.slick-next {
+	    left: 25px;
+	    right: auto;
+	    &:before {
+		content: "<";
+	    }
+	}
+    }
+}
+.article {
+    .slick-prev {
+	left: 15px;
+	top: 50%;
+	&:before {
+	    content: "<";
+	}
+    }
+    .slick-next {
+	right: 15px;
+	top: 50%;
+	&:before {
+	    content: " >";
+	}
+    }
+}
+.news {
+    .slick-prev {
+	left: 15px;
+	top: 50%;
+	&:before {
+	    content: "<";
+	}
+    }
+    .slick-next {
+	right: 15px;
+	top: 50%;
+	&:before {
+	    content: " >";
+	}
+    }
+}
+.fsc-slider-slick-content {
+    position: relative;
+    float: left;
+    width: 100%;
+    .slick-next {
+	right: 15px;
+	top: 50%;
+    }
+    .fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    width: auto !important;
+	    height: auto;
+	    max-height: 250px;
+	    margin: 0 auto;
+	}
+	.article {
+	    float: none;
+	}
+	div {
+	    width: auto !important;
+	    padding-left: 0 !important;
+	    padding-right: 0 !important;
+	    h1 {
+		font-family: $font_4, $font_5;
+		font-size: 1.3rem !important;
+		width: 100% !important;
+		max-width: 200px;
+		background: $color_donkey_brown_approx !important;
+		margin-bottom: 10px !important;
+	    }
+	    h2 {
+		font-family: $font_4, $font_5;
+		font-size: 1.3rem !important;
+		width: 100% !important;
+		max-width: 200px;
+		background: $color_donkey_brown_approx !important;
+		margin-bottom: 10px !important;
+	    }
+	    h1::before {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 0 0 10px;
+		border-style: solid;
+		border-right: solid 10px transparent;
+		border-left: solid 10px transparent;
+		position: absolute;
+		top: 32px;
+		left: 5px;
+		color: $color_donkey_brown_approx;
+		z-index: 1;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(180deg);
+	    }
+	    h2::before {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 0 0 10px;
+		border-style: solid;
+		border-right: solid 10px transparent;
+		border-left: solid 10px transparent;
+		position: absolute;
+		top: 32px;
+		left: 5px;
+		color: $color_donkey_brown_approx;
+		z-index: 1;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(180deg);
+	    }
+	    div.article div.ce-textpic {
+		padding: 0;
+		.ce-gallery {
+		    position: static;
+		}
+		.ce-bodytext {
+		    position: static;
+		    background: $color_bon_jour_80_approx;
+		    padding: 10px !important;
+		    //Instead of the line below you could use @include box-sizing($bs)
+		    box-sizing: border-box;
+		    color: $black;
+		    &:empty {
+			display: none;
+		    }
+		    a {
+			color: $black;
+		    }
+		    p:empty {
+			display: none;
+		    }
+		}
+		.fsc-slider-slick.slick-slider {
+		    margin-bottom: 0;
+		}
+	    }
+	}
+	div[id*="c"] {
+	    width: auto !important;
+	    padding-left: 0 !important;
+	    padding-right: 0 !important;
+	    h1 {
+		font-family: $font_4, $font_5;
+		font-size: 1.3rem !important;
+		width: 100% !important;
+		max-width: 200px;
+		background: $color_donkey_brown_approx !important;
+		margin-bottom: 10px !important;
+	    }
+	    h2 {
+		font-family: $font_4, $font_5;
+		font-size: 1.3rem !important;
+		width: 100% !important;
+		max-width: 200px;
+		background: $color_donkey_brown_approx !important;
+		margin-bottom: 10px !important;
+	    }
+	    h1::before {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 0 0 10px;
+		border-style: solid;
+		border-right: solid 10px transparent;
+		border-left: solid 10px transparent;
+		position: absolute;
+		top: 32px;
+		left: 5px;
+		color: $color_donkey_brown_approx;
+		z-index: 1;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(180deg);
+	    }
+	    h2::before {
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 0 0 10px;
+		border-style: solid;
+		border-right: solid 10px transparent;
+		border-left: solid 10px transparent;
+		position: absolute;
+		top: 32px;
+		left: 5px;
+		color: $color_donkey_brown_approx;
+		z-index: 1;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(180deg);
+	    }
+	    div.article div.ce-textpic {
+		padding: 0;
+		.ce-gallery {
+		    position: static;
+		}
+		.ce-bodytext {
+		    position: static;
+		    background: $color_bon_jour_80_approx;
+		    padding: 10px !important;
+		    //Instead of the line below you could use @include box-sizing($bs)
+		    box-sizing: border-box;
+		    color: $black;
+		    &:empty {
+			display: none;
+		    }
+		    a {
+			color: $black;
+		    }
+		    p:empty {
+			display: none;
+		    }
+		}
+		.fsc-slider-slick.slick-slider {
+		    margin-bottom: 0;
+		}
+	    }
+	}
+    }
+    .slick-prev {
+	top: 50%;
+	left: 15px;
+    }
+    .ce-bodytext {
+	display: none;
+    }
+}
+.fsc-slider-slick-trend-nav {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 25px !important;
+    .slick-next {
+	right: 15px;
+	top: 50%;
+    }
+    .slick-prev {
+	top: 50%;
+	left: 15px;
+    }
+    .slick-list.draggable .fsc-slider-slick-item {
+	margin-right: 10px;
+    }
+    .slick-slide img {
+	max-height: 100%;
+	width: 100%;
+    }
+}
+@media only screen and(max-device-width: 800px) and(orientation: portrait) {
+    .fsc-slider-slick-height {
+	height: 500px;
+	min-height: 500px;
+	.slick-track {
+	    margin: 0 !important;
+	}
+	figure.fsc-slider-slick-item img {
+	    max-height: 500px;
+	}
+    }
+    .fsc-slider-slick-trend {
+	height: 500px;
+	figure.fsc-slider-slick-item {
+	    img {
+		max-height: 500px;
+	    }
+	    .fsc-slider-slick-trend-description {
+		bottom: 25px;
+	    }
+	}
+    }
+    .content.zweisp .fsc-slider-slick-height, .col-sm-4 .fsc-slider-slick-height, .col-sm-6 .fsc-slider-slick-height {
+	height: 500px;
+	min-height: 500px;
+	.slick-track {
+	    margin: 0 !important;
+	}
+	figure.fsc-slider-slick-item img {
+	    max-height: 500px;
+	}
+    }
+    .dreisp-text .fsc-slider-slick-height {
+	height: 500px;
+	min-height: 500px;
+	.slick-track {
+	    margin: 0 !important;
+	}
+	figure.fsc-slider-slick-item img {
+	    max-height: 500px;
+	}
+    }
+}
+@media only screen and(max-device-width: 640px) and(orientation: portrait) {
+    .fsc-slider-slick-height {
+	height: 250px;
+	min-height: 250px;
+	.slick-track {
+	    margin: 0 !important;
+	}
+	figure.fsc-slider-slick-item img {
+	    max-height: 250px;
+	}
+    }
+    .fsc-slider-slick-trend {
+	height: 320px;
+	.slick-list {
+	    overflow: visible !important;
+	}
+	figure.fsc-slider-slick-item {
+	    img {
+		max-height: 250px;
+		max-width: 100%;
+	    }
+	    .fsc-slider-slick-trend-description {
+		bottom: -80px;
+	    }
+	}
+    }
+    .fsc-slider-slick-trend-nav {
+	display: none !important;
+    }
+    .content.zweisp .fsc-slider-slick-height, .col-sm-4 .fsc-slider-slick-height, .col-sm-6 .fsc-slider-slick-height {
+	height: 250px;
+	min-height: 250px;
+	.slick-track {
+	    margin: 0 !important;
+	}
+	figure.fsc-slider-slick-item img {
+	    max-height: 250px;
+	}
+    }
+    .dreisp-text .fsc-slider-slick-height {
+	height: 250px;
+	min-height: 250px;
+	.slick-track {
+	    margin: 0 !important;
+	}
+	figure.fsc-slider-slick-item img {
+	    max-height: 250px;
+	}
+    }
+}
+@media only screen and(max-width: 420px) {
+    body div.fullWrap div.pageWrap div.contentWrap div.content div.news.news-single .article .fsc-slider-slick-height-track.news-img-wrap .outer .mediaelement a img {
+	position: relative;
+	float: none;
+	width: auto;
+	max-height: 300px;
+    }
+}
+@media only screen and(max-width: 768px) and(orientation: portrait) {
+    body div.fullWrap div.pageWrap div.contentWrap div.content div.news.news-single .article .fsc-slider-slick-height-track.news-img-wrap .outer .mediaelement a img {
+	position: relative;
+	float: none;
+	width: auto;
+	max-height: 400px;
+    }
+}
+.shariff li.shariff-button a::before {
+}
+img.mfp-img {
+}
+.mfp-gallery .mfp-image-holder .mfp-figure {
+    cursor: pointer;
+}
+.fsc-slider-slick-ce .lightbox {
+    position: static;
+    left: auto;
+    width: auto;
+}
+.content.zweisp .fsc-slider-slick-height, .col-sm-4 .fsc-slider-slick-height, .col-sm-6 .fsc-slider-slick-height {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 280px;
+    background: transparent;
+    .slick-track {
+	margin: 0 !important;
+    }
+    figure.fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    width: auto;
+	    height: auto;
+	    max-height: 280px;
+	    margin: 0 auto;
+	    max-width: 100%;
+	}
+    }
+}
+.col-sm-4 .fsc-slider-slick-height {
+	min-height: 222px;
+  }
+.dreisp-text .fsc-slider-slick-height {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 180px;
+    background: transparent;
+    .slick-track {
+	margin: 0 !important;
+    }
+    figure.fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    width: auto;
+	    height: auto;
+	    max-height: 180px;
+	    margin: 0 auto;
+	    max-width: 100%;
+	}
+    }
+}
+.zweisp33-66 .fsc-slider-slick-height {
+    max-height: 420px;
+    min-height: auto;
+    .slick-track {
+	margin: 0 !important;
+    }
+    figure.fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    @extend %extend_13;
+	}
+    }
+}
+.zweisp66-33 .fsc-slider-slick-height {
+    max-height: 420px;
+    .slick-track {
+	margin: 0 !important;
+    }
+    figure.fsc-slider-slick-item {
+	text-align: center;
+	img {
+	    @extend %extend_13;
+	}
+    }
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.fsc-slider-slick.ce-row.slick-slider {
+    .slick-prev {
+	left: 15px;
+	top: 55%;
+    }
+    .slick-next {
+	right: 15px;
+	top: 55%;
+    }
+    .slick-dots {
+	display: none !important;
+    }
+}
+section#content, section#content .slick-slider img {
+	width: auto;
+
+}

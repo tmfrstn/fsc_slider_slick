@@ -1,0 +1,36 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+        <langChildren>1</langChildren>
+    </meta>
+    <ROOT>
+        <type>array</type>
+        <el>
+            <!-- Checkbox -->
+            <options.autoplay>
+                <TCEforms>
+                    <exclude>0</exclude>
+                    <label>
+                        LLL:EXT:fsc_slider_slick/Resources/Private/Language/locallang_be.xlf:flexform.autoplay
+                    </label>
+                    <config>
+                        <type>check</type>
+                        <default>1</default>
+                    </config>
+                </TCEforms>
+            </options.autoplay>
+            <options.infinite>
+                <TCEforms>
+                    <exclude>0</exclude>
+                    <label>
+                        LLL:EXT:fsc_slider_slick/Resources/Private/Language/locallang_be.xlf:flexform.infinite
+                    </label>
+                    <config>
+                        <type>check</type>
+                        <default>1</default>
+                    </config>
+                </TCEforms>
+            </options.infinite>
+        </el>
+    </ROOT>
+</T3DataStructure>

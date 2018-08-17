@@ -1,0 +1,32 @@
+<div xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:render partial="Header" arguments="{_all}" />
+
+	<f:switch expression="{data.layout}">
+		<f:case value="10">
+			<f:render partial="TrendSlider_10" arguments="{_all}" />
+		</f:case>
+		<f:case value="20">
+			<f:render partial="LogoSlider_20" arguments="{_all}" />
+		</f:case>
+		<f:case value="30">
+			<f:render partial="ContentSlider_30" arguments="{_all}" />
+		</f:case>
+		<f:case value="40">
+			<div class="fsc-slider-slick-fix slick-slider clearfix" style="width: {slider.width}px; margin: auto" data-slick='{slider.options -> f:format.raw()}'>
+				<f:render partial="FixedSlider_40" arguments="{_all}" />
+			</div>
+		</f:case>
+		<f:case value="50">
+			<f:render partial="FixedHeightSlider_50" arguments="{_all}" />
+		</f:case>
+		<f:case default="TRUE">
+			<div class="fsc-slider-slick slick-slider clearfix" style="width: {slider.width}px; margin: auto" data-slick='{slider.options -> f:format.raw()}'>
+				<f:render partial="DefaultSlider" arguments="{_all}" />
+			</div>
+		</f:case>
+	</f:switch>
+</f:section>
+</div>
