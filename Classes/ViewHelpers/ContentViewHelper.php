@@ -28,7 +28,7 @@ namespace TmFrstn\FscSliderSlick\ViewHelpers;
  * ViewHelper zur Rückgabe eines geparsten tt_content Elementes
  */
 
-class ContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
 
   /**
    * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
