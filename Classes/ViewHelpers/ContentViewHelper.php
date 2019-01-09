@@ -48,7 +48,6 @@ class ContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBase
    * @return   string        Geparstes Content Element
    */
   public function render($uid) {
-#    print_r($GLOBALS['TSFE']->config['INTincScript']);
 
     $this->cObj = $this->configurationManager->getContentObject();
     $conf = array( // config
@@ -56,13 +55,9 @@ class ContentViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBase
       'source' => $uid,
       'dontCheckPid' => 1
     );
-#    return $this->cObj->RECORDS($conf); /* Original */
+
     $this->cObj->INT_include = 0;
     $content = $this->cObj->cObjGetSingle('RECORDS',$conf);
-
-    /** @var $TSFE \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController */
-#    $TSFE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Frontend\\Controller\\TypoScriptFrontendController');
-#    $TSFE->INTincScript();
 
     return $content;
   }
